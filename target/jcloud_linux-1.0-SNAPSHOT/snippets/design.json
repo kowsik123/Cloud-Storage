@@ -1,0 +1,103 @@
+[
+    {
+        "type": "SIGNIN",
+        "input": ["email","password"],
+        "output": ["SIGNIN EMIAL_NOT_FOUND","SIGNIN SUCCESS","SIGNIN INCORRECT_PASSWORD","SIGNIN FAILED"]
+    },
+    {
+        "type": "SIGNUP",
+        "input": ["img","email","fullname","password"],
+        "output": ["SIGNUP LARGE_IMAGE_SIZE","SIGNUP EMAIL_EXISTS","SIGNUP ZERO_LENGTH","SIGNUP SUCCESS","SIGNUP FAILED"]
+    },
+    {
+        "type": "PROFILE PICTURE",
+        "input": [],
+        "output": {"responseType":"image"}
+    },
+    {
+        "type": "PROFILE INFO",
+        "input": [],
+        "output": ["status","fullname","storage","root"]
+    },
+    {
+        "type": "UPDATE FULLNAME",
+        "input": ["name"],
+        "output": ["UPDATE ZERO_LENGTH","UPDATE SUCCESS","UPDATE FAILED"]
+    },
+    {
+        "type": "FORGOT_PASSWORD RESET",
+        "input": ["email","otp"],
+        "output": ["FORGOT_PASSWORD WRONG_OTP","FORGOT_PASSWORD ZERO_LENGTH","FORGOT_PASSWORD SUCCESS","FORGOT_PASSWORD FAILED"]
+    },
+    {
+        "type": "FORGOT_PASSWORD SEND_OTP",
+        "input": ["email"],
+        "output": ["FORGOT_PASSWORD OTP_SENT","FORGOT_PASSWORD EMAIL_NOT_FOUND","FORGOT_PASSWORD FAILED"]
+    },
+    {
+        "type": "FOLDER INFO",
+        "input": ["id"],
+        "output": ["name","id","folders","files"]
+    },
+    {
+        "type": "FILE UPLOAD",
+        "input": ["file","parent"],
+        "output": ["status",{
+            "file": {
+                "id":"id",
+                "name":"name"
+            }
+        }]
+    },
+    {
+        "type": "FILE RENAME",
+        "input": ["name","id"],
+        "output": [true,false]
+    },
+    {
+        "type": "FILE DELETE",
+        "input": ["id"],
+        "output": [true,false]
+    },
+    {
+        "type": "FILE INFO",
+        "input": ["id","name"],
+        "output": ["status","size","lastmodified"]
+    },
+    {
+        "type": "FILE DOWNLOAD",
+        "input": ["id","name"],
+        "output": {"responseType":"file"}
+    },
+    {
+        "type": "FOLDER CREATE",
+        "input": ["name","parent"],
+        "output": ["status",{
+            "folder": {
+                "id":"id",
+                "name":"name",
+                "folders":[],
+                "files":[]
+            }
+        }]
+    },
+    {
+        "type": "FOLDER DELETE",
+        "input": ["id"],
+        "output": [true,false]
+    },
+    {
+        "type": "FOLDER RENAME",
+        "input": ["name","id"],
+        "output": [true,false]
+    },
+    {
+        "type": "FOLDER SIZE",
+        "input": ["id"],
+        "output": ["status","size"]
+    },
+    ["forgotPassword.html","resetPassword.jsp","index.jsp"],
+    {
+        "fileTypes": ["pdf","image","txt","ppt","music","video","doc","zip","spreadsheet"]
+    }
+]
